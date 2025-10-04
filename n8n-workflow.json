@@ -1,0 +1,197 @@
+{
+  "name": "AI Agentic RAG System",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerOn": "fileUpdated",
+        "folderId": {
+          "mode": "id",
+          "value": "your_google_drive_folder_id"
+        }
+      },
+      "id": "google-drive-trigger",
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "fileId": "={{ $json.id }}"
+      },
+      "id": "download-file",
+      "name": "Download File",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableName": "car_sales_knowledge_base",
+        "columns": "content, embedding, metadata",
+        "additionalFields": {}
+      },
+      "id": "supabase-vector-store",
+      "name": "Supabase Vector Store",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "triggerOn": "webhookReceived"
+      },
+      "id": "chat-trigger",
+      "name": "When chat message received",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 600]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 1000
+        },
+        "systemMessage": "You are an AI assistant for automotive sales. You can help customers find cars by searching both a knowledge base and inventory database. Use the available tools to provide accurate information about vehicles, pricing, availability, and features."
+      },
+      "id": "openai-chat-model",
+      "name": "OpenAI Chat Model",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [460, 600]
+    },
+    {
+      "parameters": {
+        "sessionId": "={{ $json.sessionId || 'default' }}"
+      },
+      "id": "simple-memory",
+      "name": "Simple Memory",
+      "type": "n8n-nodes-base.memory",
+      "typeVersion": 1,
+      "position": [460, 800]
+    },
+    {
+      "parameters": {
+        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/rpc/search_inventory",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $vars.SUPABASE_ANON_KEY }}"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $vars.SUPABASE_ANON_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "p_price_max",
+              "value": "={{ $json.price_max || 100000 }}"
+            },
+            {
+              "name": "p_in_stock",
+              "value": "={{ $json.in_stock || true }}"
+            },
+            {
+              "name": "p_limit",
+              "value": "={{ $json.limit || 25 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-request",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 600]
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "query": "={{ $json.query }}",
+        "limit": 5
+      },
+      "id": "supabase-vector-search",
+      "name": "Supabase Vector Store Search",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [680, 800]
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Chat Model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supabase Vector Store Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "ai-agentic-rag-system",
+  "tags": []
+}

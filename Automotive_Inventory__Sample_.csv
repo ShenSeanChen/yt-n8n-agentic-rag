@@ -1,0 +1,20 @@
+make,model,trim,year,powertrain,body_style,color,msrp_usd,stock_qty,vin,location,status,lead_time_weeks,test_drive_available,demo_unit,source_url,created_at
+BYD,Atto 3,Comfort,2025,EV,Compact SUV,Blue,32990,4,BYDATTO3C2025XXXX,London,In Stock,0,True,True,https://automanus.io/quotes,2025-10-03T10:34:03.440692
+BYD,Atto 3,Design,2025,EV,Compact SUV,White,34990,2,BYDATTO3D2025XXXX,London,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440712
+BYD,Dolphin,Active,2025,EV,Hatchback,Grey,26990,5,BYDDOLPA2025XXXX,Manchester,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440715
+BYD,Dolphin,Comfort,2025,EV,Hatchback,Black,28990,3,BYDDOLPC2025XXXX,Birmingham,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440717
+BYD,Seal,Dynamic RWD,2025,EV,Sedan,Silver,37990,2,BYDSEALDR2025XXXX,London,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440719
+BYD,Seal,Performance AWD,2025,EV,Sedan,Red,42990,1,BYDSEALPA2025XXXX,Leeds,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440721
+BYD,Seal U,Comfort,2025,PHEV,SUV,White,36990,0,BYDSEALU2025XXXX,Liverpool,In Transit,2,False,False,https://automanus.io/delivery,2025-10-03T10:34:03.440723
+BYD,Tang,Luxury,2025,PHEV,SUV,Blue,48990,0,BYDTANGLX2025XXXX,London,Factory Order,10,False,False,https://automanus.io/delivery,2025-10-03T10:34:03.440725
+Tesla,Model 3,Long Range,2025,EV,Sedan,White,45990,3,5YJ3E1EAXSFXXXXXX,London,In Stock,0,True,True,https://automanus.io/quotes,2025-10-03T10:34:03.440726
+Tesla,Model Y,Long Range,2025,EV,SUV,Blue,49990,2,5YJYGDEE9PFXXXXXX,Manchester,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440728
+Toyota,RAV4,Hybrid XSE,2025,HEV,SUV,Grey,36950,4,JTMW1RFV6MDXXXXXX,London,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440730
+Toyota,Corolla,SE,2025,ICE,Sedan,Silver,24950,5,JTDBU4EE9AJXXXXXX,Bristol,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440732
+BMW,i4,eDrive40,2025,EV,Sedan,Black,56900,1,WBY73AW08RFXXXXXX,London,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440734
+BMW,X5,xDrive45e,2025,PHEV,SUV,White,67900,0,5UXTA6C06M9XXXXXX,London,In Transit,3,False,False,https://automanus.io/delivery,2025-10-03T10:34:03.440736
+Ford,F-150,XLT,2025,ICE,Truck,Blue,41990,2,1FTFW1E58PKEXXXXX,Leeds,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440738
+Ford,Mustang Mach-E,Premium,2025,EV,SUV,Red,53990,1,3FMTK3SU5MMAXXXXX,Manchester,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440740
+Nissan,Leaf,SV Plus,2025,EV,Hatchback,Green,34990,3,1N4BZ1DV0LCXXXXXX,Birmingham,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440741
+Hyundai,Ioniq 5,Ultimate,2025,EV,SUV,Grey,45990,2,KM8KMDAA1NUXXXXXX,London,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440743
+Kia,EV6,GT-Line,2025,EV,SUV,White,47990,1,KNDC3DLC5N5XXXXXX,Liverpool,In Stock,0,True,False,https://automanus.io/quotes,2025-10-03T10:34:03.440745
