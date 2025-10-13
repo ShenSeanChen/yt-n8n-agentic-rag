@@ -4,7 +4,7 @@ A comprehensive AI-powered RAG (Retrieval Augmented Generation) system built wit
 
 📹 Full YouTube Guide: [Youtube link](https://www.youtube.com/watch?v=d8kVgOv9FVE&list=PLE9hy4A7ZTmpGq7GHf5tgGFWh2277AeDR&index=27)
 
-🚀 X Post: [X link](https://x.com/ShenSeanChen/status/1969013359010873513)
+🚀 X Post: [X link](https://x.com/ShenSeanChen/status/1974583301697355886)
 
 💻 Launch Full Stack Product: [Github Repo](https://github.com/ShenSeanChen/launch-mvp-stripe-nextjs-supabase)
 
