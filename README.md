@@ -2,6 +2,16 @@
 
 A comprehensive AI-powered RAG (Retrieval Augmented Generation) system built with n8n, Supabase, and OpenAI that enables intelligent automotive sales assistance through both vector search and structured data querying.
 
+📹 Full YouTube Guide: [Youtube link](https://www.youtube.com/watch?v=d8kVgOv9FVE&list=PLE9hy4A7ZTmpGq7GHf5tgGFWh2277AeDR&index=27)
+
+🚀 X Post: [X link](https://x.com/ShenSeanChen/status/1969013359010873513)
+
+💻 Launch Full Stack Product: [Github Repo](https://github.com/ShenSeanChen/launch-mvp-stripe-nextjs-supabase)
+
+☕️ Buy me a coffee: [Cafe Latte](https://buy.stripe.com/5kA176bA895ggog4gh)
+
+🤖️ Discord: [Invite link](https://discord.com/invite/TKKPzZheua)
+
 ## 🚀 Features
 
 - **AI Agentic RAG System**: Intelligent conversational AI that can answer questions about automotive inventory
